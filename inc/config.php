@@ -1,11 +1,12 @@
 <?php 
 	session_start();
-	mysql_connect("localhost", "umam12", "");
-	mysql_select_db("distro");
+	$connect = mysqli_connect("localhost", "root", "");
+	$database = "distro";
+	mysqli_select_db($connect,$database);
 	
 	// settings
 	$url = "http://localhost/distro/";
-	$title = "Online Distro";
+	$title = "Distro Online";
 	$no = 1;
 	
 	function alert($command){
