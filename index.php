@@ -47,7 +47,7 @@
 					<p style="font-size:18px">Price :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
 					<p>
 						<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">See Details</a>
-						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Order</a>
+						<a href="<?php echo $url; ?>cart.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Order</a>
 					</p>
 				</div>  
 				<?php } ?>
