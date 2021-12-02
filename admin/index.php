@@ -1,6 +1,6 @@
 <?php
 	include"../inc/config.php";
-	validate_admin_not_login("login.php");
+	validate_admin_not_login("index.php");
 	include"inc/header.php";
 ?>
 
