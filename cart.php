@@ -91,7 +91,7 @@ foreach($cart as $id => $qty){
 					</div></td>
                                         
 					<td>
-					<form action="<?php echo $url; ?>keranjang.php" method="GET"> 
+					<form action="<?php echo $url; ?>cart.php" method="GET"> 
                                                 <input type="hidden" name="update_cart" value="update">
                                                 <input type="hidden" name="act" value="beli">
                                                 <input type="hidden" name="produk_id" value="<?= $id ?>">
@@ -99,7 +99,7 @@ foreach($cart as $id => $qty){
 						</form>
 					</td>
 					<td class="price"><?php echo number_format($t, 2, ',', '.') ?></td>
-					<td><a href="<?php echo $url; ?>keranjang.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>" title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
+					<td><a href="<?php echo $url; ?>cart.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>" title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
 				</tr>
 <?php } } ?>
 				<tr style="background:#c3ebf8;font-weight:bold;">

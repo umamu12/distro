@@ -171,7 +171,7 @@
                                 
                         ?>
 				
-				<a href="<?php echo $url; ?>keranjang.php">See details</a>
+				<a href="<?php echo $url; ?>cart.php">See details</a>
 			</div>
 			<div class="row col-md-12">
 					
