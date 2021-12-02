@@ -13,14 +13,14 @@
             $cart = [];
         }
         $pid = $_GET['produk_id'];
-        $qty = 20;
+        $qty = 1;
         
         if(isset($_GET['update_cart'])){
             if(isset($cart[$pid]))
-            	if ($_GET['qty'] >= 20)
+            	if ($_GET['qty'] >= 1)
 	                $cart[$pid] = $_GET['qty'];
 	           	else
-	           		alert('Minimal Quantity 20'); redir('cart.php');
+	           		alert('Minimal Quantity 1'); redir('cart.php');
         }elseif(isset($_GET['delete_cart'])){
 			if(isset($cart[$pid])){
 				unset($cart[$pid]);

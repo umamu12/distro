@@ -101,14 +101,14 @@
           <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/bar.png');"></div>
+                <div class="fill" style="background-image:url('<?php $url ?>assets/img/c13f59fa-b412-43e7-ba45-1ec01b0a47a5.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 1</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/welcome.png');"></div>
+                <div class="fill" style="background-image:url('<?php $url ?>assets/img/distro academy banner.png');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 2</h2>
                 </div>
@@ -178,7 +178,7 @@
 			</div>
 			<div class="row col-md-12">
 				<hr>
-				<img src="<?php echo $url.'assets/img/bar.png'; ?>" width="100%"><br><br>
-				<img src="<?php echo $url.'assets/img/welcome.png'; ?>" width="100%">
+				<img src="<?php echo $url.'assets/img/c13f59fa-b412-43e7-ba45-1ec01b0a47a5.jpg'; ?>" width="100%"><br><br>
+				<img src="<?php echo $url.'assets/img/distro academy banner.png'; ?>" width="100%">
 			</div>
 		</div>
