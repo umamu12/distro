@@ -13,20 +13,20 @@
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
-			<h3>Detail : <?php echo $data['nama'] ?></h3>
+			<h3>Details : <?php echo $data['nama'] ?></h3>
 				<br/>
 				<div class="col-md-12 content-menu" style="margin-top:-20px;">
 				<?php $kat = mysqli_fetch_array(mysqli_query($connect, "SELECT * FROM kategori_produk where id='$data[kategori_produk_id]'"));  ?>
-					<small>Kategori :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a></small>
+					<small>Categoryy :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a></small>
 					<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
 						
 						<img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%"> 
 					</a>
 					<br><br>
 					<p><?php echo $data['deskripsi'] ?></p>
-					<p style="font-size:18px">Harga :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
+					<p style="font-size:18px">Price :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
 					<p>
-						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info" href="#" role="button">Pesan</a>
+						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info" href="#" role="button">Order</a>
 					</p>
 				</div>   
 				 
@@ -46,7 +46,7 @@
 			<div class="row">
 			<div class="col-md-12">
 			<hr>
-			<h3>Kategori : <?php echo $kat['nama'] ?></h3>
+			<h3>Category : <?php echo $kat['nama'] ?></h3>
 				<?php 
 					$k = mysqli_query($connect, "SELECT * FROM produk where kategori_produk_id='$kategori'");
 					while($data = mysqli_fetch_array($k)){
@@ -56,10 +56,10 @@
 						<img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
 						<h4><?php echo $data['nama'] ?></h4>
 					</a>
-					<p style="font-size:18px">Harga :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
+					<p style="font-size:18px">Price :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
 					<p>
-						<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">Lihat Detail</a>
-						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Pesan</a>
+						<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">See Details</a>
+						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Order</a>
 					</p>
 				</div>  
 				<?php } ?>
@@ -74,7 +74,7 @@
 			<div class="row">
 			<div class="col-md-12">
 			<hr>
-			<h3>Daftar Semua Menu</h3>
+			<h3>List All Menu</h3>
 				<?php 
 					$k = mysqli_query($connect, "SELECT * FROM produk");
 					while($data = mysqli_fetch_array($k)){
@@ -84,10 +84,10 @@
 						<img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
 						<h4><?php echo $data['nama'] ?></h4>
 					</a>
-					<p style="font-size:18px">Harga :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
+					<p style="font-size:18px">Price :<?php echo number_format($data['harga'], 2, ',', '.') ?></p>
 					<p>
-						<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">Lihat Detail</a>
-						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Pesan</a>
+						<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">See Details</a>
+						<a href="<?php echo $url; ?>cart.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-info btn-sm" href="#" role="button">Order</a>
 					</p>
 				</div>  
 				<?php } ?>
