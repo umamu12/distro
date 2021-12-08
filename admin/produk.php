@@ -47,7 +47,7 @@
 			$q = mysqli_query($connect,"select*from produk");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar Produk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>Product List (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="produk.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -56,7 +56,7 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post" enctype="multipart/form-data">
-						<label>Kategori Produk</label><br>
+						<label>Product Category</label><br>
 						<select name="kategori_produk_id" required class="form-control"> 
 							<?php
 								$katpro = mysqli_query($connect,"select*from kategori_produk");
@@ -65,13 +65,13 @@
 							<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?></option>
 								<?php } ?>
 						</select><br>
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
-						<label>Deskripsi</label><br> 
+						<label>Description</label><br> 
 						<textarea class="form-control" name="deskripsi" required></textarea><br>
-						<label>Gambar</label><br>
+						<label>Image</label><br>
 						<input type="file" class="form-control" name="gambar" required><br>
-						<label>Harga</label><br>
+						<label>Price</label><br>
 						<input type="number" class="form-control" name="harga" required><br>
 						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
 					</form>
@@ -84,7 +84,7 @@
 				?>
 					<div class="row col-md-6">
 					<form action="produk.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Kategori Produk</label><br>
+						<label>Product Category</label><br>
 						<select name="kategori_produk_id" required class="form-control"> 
 						<?php
 								$katpro = mysqli_query($connect,"select*from kategori_produk where id='$data->kategori_produk_id'");
@@ -98,13 +98,13 @@
 								<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?></option>
 								<?php } ?>
 						</select><br>
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>"><br>
-						<label>Deskripsi</label><br> 
+						<label>Description</label><br> 
 						<textarea class="form-control" name="deskripsi" required><?php echo $data->deskripsi; ?></textarea><br>
-						<label>Gambar</label><br>
+						<label>Image</label><br>
 						<input type="file" class="form-control" name="gambar" required><br>
-						<label>Harga</label><br>
+						<label>Price</label><br>
 						<input type="number" class="form-control" name="harga" required value="<?php echo $data->harga; ?>"><br>
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
 					</form>
@@ -119,9 +119,9 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th width="70px">Gambar</th> 
-					<th>Nama</th> 
-					<th>harga</th> 
+					<th width="70px">Image</th> 
+					<th>Name</th> 
+					<th>Price</th> 
 					<th>*</th> 
 				</tr> 
 			</thead> 

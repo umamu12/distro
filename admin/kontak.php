@@ -37,7 +37,7 @@
 			$q = mysqli_query($connect,"select*from kontak");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar Kontak Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>Contact List Login (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="kontak.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -46,13 +46,13 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
 						<label>Email</label><br>
 						<input type="email" class="form-control" name="email" required><br>
-						<label>Subjek</label><br>
+						<label>Subject</label><br>
 						<input type="text" class="form-control" name="subjek" required><br>
-						<label>Pesan</label><br>
+						<label>Message</label><br>
 						<textarea class="form-control" name="pesan" required></textarea><br>
 						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
 					</form>
@@ -65,13 +65,13 @@
 				?>
 					<div class="row col-md-6">
 					<form action="kontak.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>" required><br>
 						<label>Email</label><br>
 						<input type="email" class="form-control" name="email" value="<?php echo $data->email; ?>" required><br>
-						<label>Subjek</label><br>
+						<label>Subject</label><br>
 						<input type="text" class="form-control" name="subjek" value="<?php echo $data->subjek; ?>" required><br>
-						<label>Pesan</label><br>
+						<label>Message</label><br>
 						<textarea class="form-control" name="pesan" required><?php echo $data->pesan; ?></textarea><br>
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
 					</form>
@@ -86,10 +86,10 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama</th> 
+					<th>Name</th> 
 					<th>Email</th> 
-					<th>Subjek</th> 
-					<th>Pesan</th> 
+					<th>Subject</th> 
+					<th>Message</th> 
 					<th>*</th> 
 				</tr> 
 			</thead> 

@@ -30,7 +30,7 @@
 					?>
 					<div class="col-md-6">
 						<div class="row">
-							<h3>Info Pembayaran</h3>
+							<h3>PAyment Info</h3>
 							<form action="" method="POST">
 								<textarea class="form-control" name="info"><?php echo $dInfo->info; ?></textarea>
 								<div class="form-group">
@@ -79,20 +79,20 @@
 					$dataPesanan = mysqli_fetch_object(mysqli_query($connect,"Select*from pesanan where id='$dataPembayaran->id_pesanan'"))
 					?>
 					<div class="col-md-6">
-						<h3> Detail Pembayaran</h3>
+						<h3> Payment Details</h3>
 						<table class="table table-striped">
 							<tbody>
 								<tr>
-									<td>Nama</td>
+									<td>Name</td>
 									<td><?php echo $dataPesanan->nama; ?></td>
 								</tr>
 								<tr>
-									<td>Total Pembayaran</td>
+									<td>Total Payment</td>
 									<td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
 								</tr>
 								<tr>
-									<td>Bukti Transaksi</td>
-									<td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Bukti Transaksi</a></td>
+									<td>Proof of Payment</td>
+									<td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Proof of Payment</a></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -116,14 +116,14 @@
 		</div>
 		</div>
 
-		<h4>Daftar pembayaran Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>List of incoming payments(<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a href="pembayaran.php?act=info" class="btn btn-info">Info</a>
 		<hr>
 		<table class="table table-striped table-hover"> 
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama</th> 
+					<th>Name</th> 
 					<th>Total</th> 
 					<th>Status</th> 
 					<th>*</th>
@@ -141,8 +141,8 @@
 					<td><?php echo 'Rp.' . number_format($data->total, 2,',','.') ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-warning" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail</a>
-						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan</a>
+						<a class="btn btn-sm btn-warning" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Details</a>
+						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Order</a>
 					</td> 
 				</tr>
 		<?php } ?>

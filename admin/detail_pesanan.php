@@ -46,14 +46,14 @@
 			}
 			$totalBayar += $ongkir;
 		?>
-		<h4 class="pull-left">Pesanan Detail</h4> 
+		<h4 class="pull-left">Order Details</h4> 
 		<a class="btn btn-sm btn-primary pull-right" href="pesanan.php">&laquo; Kembali</a>
 		<br>
 		<hr> 
 		<div class="row col-md-12">
 		<table class="table table-striped table-hove">
 			<tr>
-				<td width="200">Nama Pemesan</td> 
+				<td width="200">Customer Name</td> 
 				<?php
 					$katpro = mysqli_query($connect,"select*from user where id='$data->user_id'");
 							$user = mysqli_fetch_array($katpro);
@@ -61,11 +61,11 @@
 				<td><?php echo $user['nama'] ?></td> 
 			</tr>
 			<tr>
-				<td>Tanggal Pesan</td>  
+				<td>Order Date</td>  
 				<td><?php echo substr($data->tanggal_pesan,0,10); ?></td> 
 			</tr>
 			<tr>
-				<td>Tanggal Digunakan</td>  
+				<td>Use Date</td>  
 				<td><?php echo $data->tanggal_digunakan ?></td> 
 			</tr>
 			<tr>
@@ -73,20 +73,20 @@
 				<td>Telephone</td> 
 				<td><?php echo $data->telephone ?></td> 
 			</tr>
-				<td>Alamat</td> 
+				<td>Address</td> 
 				
 				<td><?php echo $data->alamat ?></td> 
 			</tr> 
 			<tr>
-				<td>Total Bayar</td>
+				<td>Total PAy</td>
 				<td><b><?php echo "Rp. " . number_format($totalBayar, 2, ",", "."); ?></b></td>
 			</tr>
 			<tr>
-				<td>Dibayar</td>
+				<td>Paid</td>
 				<td><?php echo "Rp. " . number_format($totalPembayaran, 2, ",", "."); ?></td>
 			</tr>
 			<tr>
-				<td>Kekurangan</td>
+				<td>Rest of the bill</td>
 				<td><?php echo "Rp. " . number_format($totalBayar - $totalPembayaran, 2, ",", "."); ?></td>
 			</tr>
 			<tr>
@@ -96,16 +96,16 @@
 		</table>
 		</div>
 		<div class="row col-md-12"> 
-		<h4>List Pesanan</h4> 
+		<h4>Product List</h4> 
 		<hr> 
 		<table class="table table-striped table-hove"> 
 		<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama Produk</th> 
-					<th>Harga Satuan</th> 
+					<th>Product Name</th> 
+					<th>Unit Price</th> 
 					<th>QTY</th> 
-					<th>Harga *</th>   
+					<th>Price *</th>   
 				</tr> 
 			</thead> 
 			<tbody> 
@@ -135,7 +135,7 @@
 			<?php } ?>
 				<tr>
 					<td colspan="3" class="text-center">
-					<h5><b>KOTA & ONGKIR</b></h5>
+					<h5><b>CITY & SHIPPING</b></h5>
 					</td>
 					<td class="text-bold">
 					<h5><b><?php  echo $kota ? $kota : "Tidak di ketahui"; ?></b></h5>
@@ -146,7 +146,7 @@
 				</tr>
 				<tr>
 					<td colspan="4" class="text-center">
-					<h5><b>TOTAL HARGA</b></h5>
+					<h5><b>TOTAL PRICE</b></h5>
 					</td>
 					<td class="text-bold">
 					<h5><b><?php  echo number_format($total + $ongkir, 2, ',', '.') ?></b></h5>

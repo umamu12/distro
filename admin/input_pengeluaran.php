@@ -36,7 +36,7 @@
 			$q = mysqli_query($connect,"select*from laporan");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Input Pengeluaran (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>Input Expenses (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="input_pengeluaran.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -45,9 +45,9 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post" enctype="multipart/form-data">
-						<label>Nama Barang</label><br>
+						<label>Item Name</label><br>
 						<input type="text" class="form-control" name="nama_barang" required placeholder="Masukkan Nama Barang"><br>
-						<label>Tanggal Pengeluaran</label><br>
+						<label>Issue Date</label><br>
 						<div class="form-group">
 							<div class='input-group date' id='datetimepicker'>
 								<input type='text' class="form-control" name="Tanggal_pengeluaran"
@@ -57,9 +57,9 @@
 								</span>
 							</div>
 						</div>
-						<label>Harga</label><br>
+						<label>Price</label><br>
 						<input type="text" class="form-control" name="harga" required placeholder="Masukkan Harga"><br>
-						<label>jumlah</label><br>
+						<label>Amount</label><br>
 						<input type="text" class="form-control" name="jumlah" required placeholder="Masukkan Jumlah"><br>
 						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
 					</form>
@@ -72,11 +72,11 @@
 				?>
 					<div class="row col-md-6">
 					<form action="input_pengeluaran.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama barang</label><br>
+						<label>Item Name</label><br>
 						<input type="text" class="form-control" name="nama_barang" value="<?php echo $data->nama_barang; ?>" required><br>
-						<label>Harga</label><br>
+						<label>Price</label><br>
 						<input type="text" class="form-control" name="harga" value="<?php echo $data->harga; ?>" required><br>
-						<label>jumlah</label><br>
+						<label>Amount</label><br>
 						<input type="text" class="form-control" name="jumlah" value="<?php echo $data->jumlah; ?>" required><br>
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
 					</form>
@@ -90,11 +90,11 @@
 		<table class="table table-striped table-hove">
 			<thead>
 				<tr>
-					<th>NO</th>
-					<th>Nama Barang</th>
-					<th>Tanggal Pengeluaran</th>
-					<th>harga</th>
-					<th>jumlah barang</th>
+					<th>Number</th>
+					<th>Item Name</th>
+					<th>Issue Date</th>
+					<th>Price</th>
+					<th>Total item</th>
 					<th>Total</th>
 					<th>Action</th>
 				</tr>

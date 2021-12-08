@@ -39,7 +39,7 @@
 			$q = mysqli_query($connect,"select*from kota");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar Produk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>Product List (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="kota.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -48,9 +48,9 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
-						<label>Ongkir</label><br>
+						<label>Shipping</label><br>
 						<input type="number" class="form-control" name="ongkir" required><br>
 						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
 					</form>
@@ -63,9 +63,9 @@
 				?>
 					<div class="row col-md-6">
 					<form action="kota.php?act=edit&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>"><br>
-						<label>Ongkir</label><br>
+						<label>Shipping</label><br>
 						<input type="number" class="form-control" name="ongkir" required value="<?php echo $data->ongkir; ?>"><br>
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
 					</form>
@@ -80,8 +80,8 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama</th> 
-					<th>Ongkir</th> 
+					<th>Name</th> 
+					<th>Shipping</th> 
 					<th>*</th> 
 				</tr> 
 			</thead> 

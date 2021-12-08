@@ -60,16 +60,16 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<?php echo $url ?>admin/index.php">Home</a></li>
 			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master Data <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Master <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="user.php">Data User</a></li>
-                <li><a href="produk.php">Data Produk</a></li>
-                <li><a href="kategori_produk.php">Data Kategori Produk</a></li>
-                <li><a href="kota.php">Kota & Ongkir</a></li>
+                <li><a href="user.php">User Data</a></li>
+                <li><a href="produk.php">Product Data</a></li>
+                <li><a href="kategori_produk.php">Product Category DAta</a></li>
+                <li><a href="kota.php">City & Shipping</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan <span class="caret"></span></a>
+            <!--/<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Report <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="laporan_pengeluaran.php">Laporan Pengeluaran </a></li>
                       <li><a href="input_pengeluaran.php">Input Pengeluaran</a></li>
@@ -77,14 +77,14 @@
                       <li><a href="laporan.php">Laporan Penjualan</a></li>
                       <li><a href="">Input Penjualan</a></li>
                     </ul>
-                  </li>
-            <li><a href="pesanan.php">Pesanan
+                  </li>-->
+            <li><a href="pesanan.php">Order
               <?php if ($totalUnRead > 0) { ?> <span class="badge"><?php echo $totalUnRead; ?></span> <?php } ?>
             </a></li>
-            <li><a href="pembayaran.php">Pembayaran
+            <li><a href="pembayaran.php">Payment
               <?php if ($totalPending > 0) { ?> <span class="badge"><?php echo $totalPending; ?></span> <?php } ?>
             </a></li>
-            <li><a href="kontak.php">Kontak</a></li>
+            <li><a href="kontak.php">Contact</a></li>
             <li><a href="<?php echo $url ?>admin/logout.php">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->

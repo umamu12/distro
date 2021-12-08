@@ -30,7 +30,7 @@
 			$q = mysqli_query($connect,"select*from pesanan order by id desc");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar pesanan Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>List of incoming payments(<?php echo ($j>0)?$j:0; ?>)</h4>
 		<!--a class="btn btn-sm btn-primary" href="pesanan.php?act=create">Add Data</a-->
 		<hr>
 		<?php
@@ -40,7 +40,7 @@
 				?>
 					<div class="row col-md-6">
 					<form action="pesanan.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Orang Yang Mesan</label><br>
+						<label>Customer</label><br>
 						<select name="user_id" required class="form-control"> 
 						<?php
 								$katpro = mysqli_query($connect,"select*from user where id='$data->user_id'");
@@ -54,15 +54,15 @@
 								<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?></option>
 								<?php } ?>
 						</select><br>
-						<label>Tanggal Pesan</label><br>
+						<label>Order Date</label><br>
 						<input type="text" class="form-control" name="tanggal_pesan" value="<?php echo substr($data->tanggal_digunakan,0,10); ?>" required><br>
-						<label>Tanggal Digunakan</label><br>
+						<label>Date used</label><br>
 						<input type="text" class="form-control" name="tanggal_digunakan" value="<?php echo $data->tanggal_digunakan; ?>" required><br>
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>" required><br>
 						<label>Telephone</label><br>
 						<input type="text" class="form-control" name="telephone" value="<?php echo $data->telephone; ?>" required><br>
-						<label>Alamat</label><br>
+						<label>Address</label><br>
 						<input type="text" class="form-control" name="alamat" value="<?php echo $data->alamat; ?>" required><br>
 						 
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
@@ -78,9 +78,9 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama Pemesan</th> 
-					<th>Tanggal Pesan</th> 
-					<th>Tanggal Digunakan</th> 
+					<th>Customer Name</th> 
+					<th>Order Date</th> 
+					<th>Date Used</th> 
 					<th>Telephone</th> 
 					<th>Status</th> 
 					<th>*</th> 
@@ -100,7 +100,7 @@
 					<td><?php echo $data->telephone ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-warning" href="detail_pesanan.php?id=<?php echo $data->id ?>">Detail</a>
+						<a class="btn btn-sm btn-warning" href="detail_pesanan.php?id=<?php echo $data->id ?>">Details</a>
 						<a class="btn btn-sm btn-success" href="pesanan.php?act=edit&&id=<?php echo $data->id ?>">Edit</a>
 						<a class="btn btn-sm btn-danger" href="pesanan.php?act=delete&&id=<?php echo $data->id ?>">Delete</a>
 					</td> 

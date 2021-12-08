@@ -37,7 +37,7 @@
 			$q = mysqli_query($connect,"select*from user");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar user Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>User Signed up List (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="user.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -46,13 +46,13 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
 						<label>Email</label><br>
 						<input type="email" class="form-control" name="email" required><br>
 						<label>Telephone</label><br>
 						<input type="text" class="form-control" name="telephone" required><br>
-						<label>Alamat</label><br>
+						<label>Address</label><br>
 						<input type="text" class="form-control" name="alamat" required><br>
 						<label>Password</label><br>
 						<input type="password" class="form-control" name="password" required><br>
@@ -73,13 +73,13 @@
 				?>
 					<div class="row col-md-6">
 					<form action="user.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>" required><br>
 						<label>Email</label><br>
 						<input type="email" class="form-control" name="email" value="<?php echo $data->email; ?>" required><br>
 						<label>Telephone</label><br>
 						<input type="text" class="form-control" name="telephone" value="<?php echo $data->telephone; ?>" required><br>
-						<label>Alamat</label><br>
+						<label>Address</label><br>
 						<input type="text" class="form-control" name="alamat" value="<?php echo $data->alamat; ?>" required><br>
 						<label>Password</label><br>
 						<input type="password" class="form-control" name="password" required><br>
@@ -103,10 +103,10 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Nama</th> 
+					<th>Name</th> 
 					<th>Email</th> 
 					<th>Telephone</th> 
-					<th>Alamat</th> 
+					<th>Address</th> 
 					<th>Status</th> 
 					<th>*</th> 
 				</tr> 

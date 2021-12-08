@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 08:36 AM
+-- Generation Time: Dec 08, 2021 at 05:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -92,19 +92,13 @@ CREATE TABLE `kontak` (
 --
 
 INSERT INTO `kontak` (`id`, `nama`, `email`, `subjek`, `pesan`) VALUES
-(10, '', 'mshodiqul@gmail.com', '', ''),
-(11, '', 'mshodiqul@gmail.com', '', ''),
-(12, '', 'mshodiqul@gmail.com', '', ''),
-(13, '', 'mshodiqul@gmail.com', '', ''),
-(14, '', 'mshodiqul@gmail.com', '', ''),
-(15, '', 'meryayu@gmail.com', '', ''),
-(16, '', 'aku@gmail.com', '', ''),
-(17, '', 'aku@gmail.com', '', ''),
-(18, '', 'aku@gmail.com', '', ''),
-(19, '', 'aku@gmail.com', '', ''),
-(20, '', 'aku@gmail.com', '', ''),
 (21, '', 'aku@gmail.com', '', ''),
-(22, '', 'aku@gmail.com', '', '');
+(22, '', 'aku@gmail.com', '', ''),
+(23, '', 'adsada@gmail', '', ''),
+(24, '', 'admin@gmail.com', '', ''),
+(25, '', 'try@gmail.com', '', ''),
+(26, '', 'try@gmail.com', '', ''),
+(27, '', 'try@gmail.com', '', '');
 
 -- --------------------------------------------------------
 
@@ -179,8 +173,7 @@ INSERT INTO `pembayaran` (`id`, `id_pesanan`, `id_user`, `file`, `total`, `statu
 (5, 17, 4, '49eb6a44db57cba8d66b3404fa9f0ad46.jpg', 107500, 'verified', 'Terakhir', '2016-09-30 16:10:33'),
 (6, 18, 4, '49eb6a44db57cba8d66b3404fa9f0ad46.jpg', 300000, 'verified', 'Bukti Pembayaran', '2016-09-30 16:16:32'),
 (7, 18, 4, '49eb6a44db57cba8d66b3404fa9f0ad44.jpg', 40000, 'verified', 'Pembayaran Terakhir', '2016-09-30 16:24:01'),
-(8, 19, 4, '49eb6a44db57cba8d66b3404fa9f0ad4buttons.png', 520000, 'verified', 'Bukti Pembayaran', '2016-09-30 16:34:54'),
-(9, 25, 6, '49eb6a44db57cba8d66b3404fa9f0ad4urmain.exe', 740000, 'verified', 'ngaceng', '2017-12-04 09:14:10');
+(8, 19, 4, '49eb6a44db57cba8d66b3404fa9f0ad4buttons.png', 520000, 'verified', 'Bukti Pembayaran', '2016-09-30 16:34:54');
 
 -- --------------------------------------------------------
 
@@ -247,8 +240,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `telephone`, `alamat`, `password`, `status`) VALUES
-(1, 'Administrator', 'admin@gmail.com', '08985432330', 'Semarang Ajah', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(7, 'labib', 'labib@gmail.com', '082132517671', 'jogja', 'de0aa8172e6167e88addbba3d93ae7a2', 'admin');
+(1, 'Administrator', 'admin@gmail.com', '08985432330', 'Semarang Ajah', '7488e331b8b64e5794da3fa4eb10ad5d', 'admin'),
+(7, 'labib', 'labib@gmail.com', '082132517671', 'jogja', 'de0aa8172e6167e88addbba3d93ae7a2', 'admin'),
+(8, 'try', 'try@gmail.com', '082345678910', 'jogjes', 'c100b0bd7ee8f6aa99c5225c7365ca9c', 'user');
 
 --
 -- Indexes for dumped tables
@@ -344,7 +338,7 @@ ALTER TABLE `kategori_produk`
 -- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -380,7 +374,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

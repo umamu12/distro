@@ -37,7 +37,7 @@
 			$q = mysqli_query($connect,"select*from kategori_produk");
 			$j = mysqli_num_rows($q);
 		?>
-		<h4>Daftar Kategori Produk (<?php echo ($j>0)?$j:0; ?>)</h4>
+		<h4>Product Category List (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a class="btn btn-sm btn-primary" href="kategori_produk.php?act=create">Add Data</a>
 		<hr>
 		<?php
@@ -46,9 +46,9 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Name</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
-						<label>Deskripsi</label><br>
+						<label>Description</label><br>
 						<textarea class="form-control" name="deskripsi" required></textarea><br>
 						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
 					</form>
@@ -61,9 +61,9 @@
 				?>
 					<div class="row col-md-6">
 					<form action="kategori_produk.php?act=edit&&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>NAme</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>" required><br>
-						<label>Deskripsi</label><br>
+						<label>Description</label><br>
 						<textarea class="form-control" name="deskripsi" required><?php echo $data->deskripsi; ?></textarea><br>
 						<input type="submit" name="form-edit" value="Simpan" class="btn btn-success">
 					</form>
@@ -78,8 +78,8 @@
 			<thead> 
 				<tr> 
 					<th>#</th> 
-					<th>Kategori</th> 
-					<th>Deskripsi</th> 
+					<th>Category</th> 
+					<th>Description</th> 
 					<th>*</th> 
 				</tr> 
 			</thead> 
