@@ -26,7 +26,7 @@
 	if(!empty($_GET)){
 			$q1 = mysqli_query($connect,"select*from detail_pesanan where pesanan_id='$_GET[id]'");
 			$total = 0;
-			$dataPesanan = mysqli_fetch_object(mysql_query("Select * from pesanan where id='$_GET[id]'"));
+			$dataPesanan = mysqli_fetch_object(mysqli_query($connect, "Select * from pesanan where id='$_GET[id]'"));
 			$kota = $dataPesanan->kota;
 			$ongkir = $dataPesanan->ongkir;
 		 while($data=mysqli_fetch_object($q1)){ ?>
@@ -43,7 +43,7 @@
 			if(!empty($_POST)){
 				$gambar = md5('Y-m-d H:i:s').$_FILES['gambar']['name'];
 				extract($_POST);
-				$q = mysql_query("insert into pembayaran Values(NULL,'$_GET[id]','$_SESSION[iam_user]','$gambar','$bayar','pending','$keterangan',NOW())");
+				$q = mysqli_query($connect,"insert into pembayaran Values(NULL,'$_GET[id]','$_SESSION[iam_user]','$gambar','$bayar','pending','$keterangan',NOW())");
 				if($q){
 					$upload = move_uploaded_file($_FILES['gambar']['tmp_name'], 'uploads/'.$gambar);
 					if($upload){ alert("Success"); redir("payment.php"); }
@@ -105,8 +105,8 @@
 				<td><?php echo substr($data->tanggal_pesan,0,10) ?></td>
 				<td><?php echo $data->tanggal_digunakan ?></td>
 				<td>
-					<a class="btn btn-sm btn-primary" href="pembayaran.php?act=bayar&id=<?php echo $data->id; ?>">Pay</a>
-					<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&id=<?php echo $data->id; ?>">Cancel</a>
+					<a class="btn btn-sm btn-primary" href="payment.php?act=bayar&id=<?php echo $data->id; ?>">Pay</a>
+					<a class="btn btn-sm btn-danger" href="payment.php?act=delete&id=<?php echo $data->id; ?>">Cancel</a>
 				</td>
 			</tr>
 	<?php } ?>
